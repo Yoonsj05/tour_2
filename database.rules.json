@@ -1,0 +1,17 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "users": {
+      "$uid": {
+        "favorites": {
+          ".read": "auth != null && auth.uid == $uid",
+          ".write": "auth != null && auth.uid == $uid",
+          "$favoriteId": {
+            ".validate": "newData.hasChildren(['id', 'title', 'address', 'image', 'savedAt']) && newData.child('id').isString() && newData.child('id').val() == $favoriteId && newData.child('title').isString() && newData.child('address').isString() && newData.child('image').isString() && newData.child('savedAt').isNumber()"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Firebase에 저장한 찜한 관광지를 확인하세요." />
+  <title>우리나라 여행 보관함 | 찜 보관함</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="./app.js"></script>
+</head>
+<body data-page="favorites">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">우리나라 여행 보관함</a>
+      <nav aria-label="주요 메뉴">
+        <a class="nav-link" href="./index.html">관광지 찾기</a>
+        <a class="nav-link active" href="./favorites.html" aria-current="page">찜 보관함 <span class="count" id="favoriteCount">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">MY SAVED PLACES</p>
+      <h1>나만의 여행 보관함</h1>
+      <p>마음에 드는 여행지를 다시 살펴보고, 필요 없으면 찜을 취소해요.</p>
+      <a class="text-link" href="./index.html">관광지 더 찾아보기</a>
+    </section>
+
+    <section class="results-section" aria-labelledby="resultsTitle">
+      <div class="section-title">
+        <h2 id="resultsTitle">찜한 관광지</h2>
+        <span id="resultCount" class="subtle"></span>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Firebase 연결 중...</p>
+      <div id="cardGrid" class="card-grid"></div>
+    </section>
+  </main>
+  <footer>찜 목록은 이 브라우저의 Firebase 익명 계정에 연결돼요.</footer>
+</body>
+</html>

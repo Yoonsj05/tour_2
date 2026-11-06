@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="지역별 관광지를 살펴보고 마음에 드는 여행지를 보관하세요." />
+  <title>우리나라 여행 보관함 | 관광지 찾기</title>
+  <link rel="stylesheet" href="./style.css" />
+  <script type="module" src="./app.js"></script>
+</head>
+<body data-page="search">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./index.html">우리나라 여행 보관함</a>
+      <nav aria-label="주요 메뉴">
+        <a class="nav-link active" href="./index.html" aria-current="page">관광지 찾기</a>
+        <a class="nav-link" href="./favorites.html">찜 보관함 <span class="count" id="favoriteCount">0</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">KOREA TRAVEL</p>
+      <h1>이번엔 어디로 떠날까?</h1>
+      <p>지역을 선택하면 한국관광공사 관광정보에서 여행지를 찾아 보여줘요.</p>
+    </section>
+
+    <section class="search-panel" aria-label="관광지 검색">
+      <label for="regionSelect">여행할 지역</label>
+      <div class="search-controls">
+        <select id="regionSelect" disabled>
+          <option value="">지역 목록을 불러오는 중...</option>
+        </select>
+        <button id="searchButton" class="btn btn-primary" type="button" disabled>관광지 찾기</button>
+      </div>
+      <p id="status" class="status" role="status" aria-live="polite">Firebase 연결 중...</p>
+    </section>
+
+    <section class="results-section" aria-labelledby="resultsTitle">
+      <div class="section-title">
+        <h2 id="resultsTitle">관광지 목록</h2>
+        <span id="resultCount" class="subtle"></span>
+      </div>
+      <div id="cardGrid" class="card-grid"></div>
+      <div class="more-wrap">
+        <button id="moreButton" class="btn btn-secondary" type="button" hidden>더 보기</button>
+      </div>
+    </section>
+  </main>
+  <footer>관광정보: 한국관광공사 TourAPI · 찜 정보: Firebase</footer>
+</body>
+</html>
